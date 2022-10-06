@@ -12,7 +12,11 @@ export const Register = () => {
                     <input type="text" placeholder="Display name"/>
                     <input type="email" placeholder="Email"/>
                     <input type="password" placeholder="Password"/>
-                    <input type="file"/>
+                    <input style={{display:"none"}} type="file" id="file"/>
+                    <label htmlFor='file'>
+                        <img src=''/>
+                    </label>
+                    <button>Sign Up</button>
                 </form>
                 <p>If you don't have account ? Login</p>
             </div>
