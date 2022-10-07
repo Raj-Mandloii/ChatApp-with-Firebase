@@ -218,7 +218,13 @@
             }
             .messages{
                 background-color: #ddddf7;
-                padding: 1px;
+                padding: 10px;
+                height: calc(100% - 160px);
+            }
+            .input{
+              height: 50px;
+              background: white; 
+              padding: 10px;
             }
         }
 
