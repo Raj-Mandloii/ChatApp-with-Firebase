@@ -4,10 +4,10 @@ export const Search = () => {
   return (
     <div className='search'>
       <div className='searchForm'>
-        <input type="text" />
+        <input type="text" placeholder='Find a user' />
       </div>
       <div className="userChat">
-        <img src="https://raj-mandloii.github.io/raj-mandloi/static/media/profile.bc02411670caa5d19ea7.jpg"/>
+        <img src="https://raj-mandloii.github.io/raj-mandloi/static/media/profile.bc02411670caa5d19ea7.jpg" />
         <div className="userChatInfo">
           <span>Jane</span>
         </div>

@@ -133,21 +133,64 @@
 
 
             }
+
             .search {
                 border-bottom: 1px solid gray;
 
-                .searchForm{
-                    input{}
+                // userform 
+                .serachForm {
+                    padding: 10px;
                 }
-                .userChat{
-                    .img{
-                     height: 50px;
-                     width: 50px;
-                     border-radius: 50%;
-                    } 
-                 }
+
+                input {
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                    padding-left: 10px;
+                    padding-top: 15px;
+                    outline: none;
+
+                    &::placeholder {
+                        color: lightGray;
+
+                    }
+                }
+
             }
-           
+
+            .userChat {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: white;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #2f2d52;
+                }
+
+                img {
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .userChatInfo {
+                    span {
+                        font-weight: bold;
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        color: lightgray;
+
+                    }
+
+                }
+            }
 
 
 
