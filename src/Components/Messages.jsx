@@ -10,6 +10,11 @@ export const Messages = () => {
         <Massage/>
         <Massage/>
         <Massage/>
+        <Massage/>
+        <Massage/>
+        <Massage/>
+        <Massage/>
+        <Massage/>
     </div>
   )
 }
