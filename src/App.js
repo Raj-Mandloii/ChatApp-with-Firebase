@@ -3,7 +3,9 @@ import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import "./style.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { useContext } from "react";
 function App() {
+  const {currentUser} = useContext()
   return (
     <BrowserRouter>
       <Routes>
