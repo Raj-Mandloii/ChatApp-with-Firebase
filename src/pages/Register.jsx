@@ -1,6 +1,11 @@
 import React from 'react'
 import img from "../assets/addImage.png"
 export const Register = () => {
+
+    const handleSumbit = (e)=>{
+        e.preventDefault();
+        console.log(e.target[0])
+    }
     return (
         <div>
             <div className='formContainer'>
@@ -8,7 +13,7 @@ export const Register = () => {
             <div className='formWrapper'>
                 <span className="logo">Chat With Firebase</span>
                 <span className="title">Register</span>
-                <form action=''>
+                <form onSubmit={handleSubmit}>
                     <input type="text" placeholder="Display name"/>
                     <input type="email" placeholder="Email"/>
                     <input type="password" placeholder="Password"/>
