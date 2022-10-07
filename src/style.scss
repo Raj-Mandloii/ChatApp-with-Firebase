@@ -190,7 +190,7 @@
                     }
 
                 }
-            }   
+            }
         }
 
         .chat {
@@ -216,15 +216,76 @@
                     cursor: pointer;
                 }
             }
-            .messages{
+
+            .messages {
                 background-color: #ddddf7;
                 padding: 10px;
                 height: calc(100% - 160px);
+
+                .message {
+                    display: flex;
+                    gap: 10px;
+
+                    .messageInfo {
+                        img {
+                            height: 40px;
+                            width: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .messageContent {
+                        img {
+                            width: 50%;
+
+                        }
+                    }
+                }
             }
-            .input{
-              height: 50px;
-              background: white; 
-              padding: 10px;
+
+            .input {
+                height: 50px;
+                background: white;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                input {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    color: #2f2d52;
+                    font-size: 18px;
+
+                    &::placeholder {
+                        color: lightGray;
+
+                    }
+                }
+
+                .send {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        height: 24px;
+                        cursor: pointer;
+
+                    }
+
+                    button {
+                        border: none;
+                        padding: 10px 15px;
+                        color: white;
+                        background: #8da4f1;
+                        border-radius: 10px;
+
+                    }
+                }
+
             }
         }
 
