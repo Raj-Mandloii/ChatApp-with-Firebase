@@ -4,11 +4,13 @@ import { Register } from "./pages/Register";
 import "./style.scss";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 function App() {
-  const { currentUser } = useContext();
+  const { currentUser } = useContext(AuthContext);
 
-  const ProtectedRoutes = ({ }) => {
+  const ProtectedRoutes = () => {
     if (!currentUser) {
+      console.log(currentUser);
       return <Navigate to="/login" />
     }
   }

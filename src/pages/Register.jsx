@@ -4,10 +4,10 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, storage, db } from "../firebase"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import { useNavigation } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 export const Register = () => {
-    const navigate = useNavigation()
+    const navigate = useNavigate()
     const [error, setErr] = useState(false)
     const handleSubmit = async (e) => {
         // setLoading(true);
@@ -79,7 +79,8 @@ export const Register = () => {
                         <button>Sign Up</button>
                         {error && <span>Something went wrong</span>}
                     </form>
-                    <p>If you don't have account ? Login</p>
+                    <p>If you don't have account ? <Link to={"/login"}>Register</Link></p>
+
                 </div>
             </div>
         </div>
