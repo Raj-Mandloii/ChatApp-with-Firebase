@@ -82,7 +82,7 @@ export const Register = () => {
                         <button>{loading ? "... Loading" :"Sign Up"}</button>
                         {error && <span>Something went wrong</span>}
                     </form>
-                    <p>If you don't have account ? <Link to={"/login"}>Register</Link></p>
+                    <p>If you don't have account ? <Link to={"/login"}>Log In</Link></p>
 
                 </div>
             </div>
