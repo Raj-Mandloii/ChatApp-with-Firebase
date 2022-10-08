@@ -1,21 +1,26 @@
 import React, { useState } from 'react'
-import {  signInWithEmailAndPassword } from "firebase/auth";
-
-import { Link, useNavigate} from 'react-router-dom';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
+
 export const Login = () => {
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     const [error, setErr] = useState(false)
     const handleSubmit = async (e) => {
         // setLoading(true);
         e.preventDefault();
+        setLoading(true)
         const email = e.target[0].value;
         const password = e.target[1].value;
 
         try {
             await signInWithEmailAndPassword(auth, email, password)
-            navigate('/')
+            navigate('/');
+            setLoading(false)
         } catch (err) {
+            setLoading(false)
+
             setErr(true);
             //   setLoading(false);
         }
@@ -32,7 +37,8 @@ export const Login = () => {
                     <form onSubmit={handleSubmit}>
                         <input type="email" placeholder="Email" />
                         <input type="password" placeholder="Password" />
-                        <button>Sign In</button>
+                        <button>{loading ? "... Loading" :"Sign In"}</button>
+
                         {error && <span>Something went wrong</span>}
 
                     </form>

@@ -8,12 +8,13 @@ import { AuthContext } from "./context/AuthContext";
 function App() {
   const { currentUser } = useContext(AuthContext);
 
-  const ProtectedRoutes = () => {
+  const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
-      console.log(currentUser);
-      return <Navigate to="/login" />
+      return <Navigate to="/login" />;
     }
-  }
+
+    return children
+  };
 
   return (
     <BrowserRouter>
@@ -22,11 +23,11 @@ function App() {
           <Route
             index
             element={
-              <ProtectedRoutes>
-               
+              <ProtectedRoute>
+
                 <Home />
 
-              </ProtectedRoutes>
+              </ProtectedRoute>
             } />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />

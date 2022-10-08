@@ -7,11 +7,13 @@ import { doc, setDoc } from "firebase/firestore";
 import { Link, useNavigate} from 'react-router-dom';
 
 export const Register = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [loading,setLoading] = useState(false)
     const [error, setErr] = useState(false)
     const handleSubmit = async (e) => {
         // setLoading(true);
         e.preventDefault();
+        setLoading(true)
         const displayName = e.target[0].value;
         const email = e.target[1].value;
         const password = e.target[2].value;
@@ -47,13 +49,14 @@ export const Register = () => {
           } catch (err) {
             console.log(err);
             setErr(true);
-            // setLoading(false);
+            setLoading(false);
           }
         });
       });
+      setLoading(false)
     } catch (err) {
       setErr(true);
-    //   setLoading(false);
+      setLoading(false);
     }
   };
 
@@ -76,7 +79,7 @@ export const Register = () => {
                             <img src={img} />
                             <span>Add An Avatar</span>
                         </label>
-                        <button>Sign Up</button>
+                        <button>{loading ? "... Loading" :"Sign Up"}</button>
                         {error && <span>Something went wrong</span>}
                     </form>
                     <p>If you don't have account ? <Link to={"/login"}>Register</Link></p>
