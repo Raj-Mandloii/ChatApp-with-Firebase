@@ -71,6 +71,7 @@ export const Input = () => {
     <div className='input'>
       <input type="text" placeholder='Type Something .....'
         onChange={e => setText(e.target.value)}
+        value={text}
       />
       <div className="send">
         <img src={attach} alt="" />
