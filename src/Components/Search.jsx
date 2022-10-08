@@ -54,15 +54,16 @@ export const Search = () => {
         })
       }
 
-    } catch (e) {
-
-    }
+    } catch (e) { }
+    setUser(null);
+    setUsername("")
   }
   return (
     <div className='search'>
       <div className='searchForm'>
         <input type="text"
           placeholder='Find a user'
+          value={username}
           onChange={e => setUsername(e.target.value)}
           onKeyDown={handleKey}
         />
