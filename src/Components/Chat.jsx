@@ -7,19 +7,20 @@ import { Input } from "./Input"
 import { useContext } from 'react'
 import { ChatContext } from '../context/ChatContext'
 export const Chat = () => {
-  const { data } = useContext(ChatContext)
+  const { data } = useContext(ChatContext);
+
   return (
-    <div className='chat'>
-      <div className='chatInfo'>
+    <div className="chat">
+      <div className="chatInfo">
         <span>{data.user?.displayName}</span>
-        <div className='chatIcons'>
-          <img src={camera} alt='Camera' />
-          <img src={add} alt='Add' />
-          <img src={more} alt='' />
+        <div className="chatIcons">
+          <img src={camera} alt="" />
+          <img src={add} alt="" />
+          <img src={more} alt="" />
         </div>
       </div>
       <Messages />
-      <Input />
+      <Input/>
     </div>
-  )
-}
+  );
+};
