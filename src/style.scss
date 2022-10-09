@@ -347,3 +347,8 @@ $darkColor : black;
         }
     }
 }
+
+
+.chat ::-webkit-scrollbar {
+    display: none;
+}
